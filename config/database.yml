@@ -22,6 +22,10 @@ default: &default
 development:
   <<: *default
   database: mota_vagas_development
+  host: localhost
+  username: marcelomota0  
+  password: 12345678
+  port: 5432
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
