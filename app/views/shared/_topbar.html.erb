@@ -14,10 +14,11 @@
             Login/Cadastro
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><%= button_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
+
         </li>
       </ul>
       <form class="d-flex" role="search">

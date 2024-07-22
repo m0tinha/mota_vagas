@@ -9,10 +9,14 @@
     <%= f.input :password_confirmation, required: true, label: false, input_html: { autocomplete: "new-password", placeholder: 'Confirm Password' } %>
   </div>
 
-  <div class="form-actions">
-    <id="login-title" class="text-center">Cadastre-se</h2>
-    <%= render "devise/shared/links" %>
-  </div>
+  <div class="form-actions text-center">
+   <%= render "devise/shared/links" %>
+  <button class="btn btn-primary mt-2">Cadastre-se</button>
+</div>
+
 <% end %>
+
+
+
 
 
