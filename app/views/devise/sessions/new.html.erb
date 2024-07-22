@@ -1,0 +1,18 @@
+<div id="logreg-forms">
+  <h2 id="login-title" class="text-center">Login</h2>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f| %>
+  
+    <div class="form-inputs">
+      <%= f.input :email, required: false, autofocus: true, label: false, input_html: { autocomplete: "email", class: 'form-control', placeholder: 'Email' } %>
+      <%= f.input :password, required: false, label: false, input_html: { autocomplete: "current-password", class: 'form-control', placeholder: 'Senha' } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-actions text-center">
+      <button class="btn btn-primary w-100">Entrar</button>
+      <a href="#" id="forgot_pswd" class="btn btn-link d-block">Forgot password?</a>
+      <%= render "devise/shared/links" %>
+    </div>
+
+  <% end %>
+</div>
