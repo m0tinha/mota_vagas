@@ -10,8 +10,9 @@
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Minha Empresa</a>
+           <a class="nav-link active" aria-current="page" href="<%= new_company_path %>">Minha Empresa</a>
         </li>
+
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-outline-light" %>

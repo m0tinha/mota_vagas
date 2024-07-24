@@ -131,3 +131,9 @@
 #login-title {
     padding-top: 20px;
 }
+
+
+input.form-control {
+    content: normal;
+  }
+  
