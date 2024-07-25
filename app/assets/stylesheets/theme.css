@@ -1,11 +1,14 @@
-html,
-body {
+html, body {
+  height: 100%;
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
 body {
   padding-top: 56px;
-  background-color: #f5f7fb !important;
+  background-color: #edeff3 !important;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 @media (max-width: 767.98px) {
@@ -86,19 +89,21 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   box-shadow: 0px 0px 6px #888;
-  margin: 20px auto 20px auto;
+  margin: 20px auto;
 }
 
 footer {
-  background: white;
-  padding: 10px 0px;
-  margin: auto;
+  background: black !important;
+  
+  padding: 10px 0;
   text-align: center;
+  width: 100%;
 }
 
 footer p {
-  margin: 0px;
+  margin: 0;
   line-height: 30px;
+  color: white !important;
 }
 
 .public-position {
@@ -116,11 +121,11 @@ footer p {
 }
 
 .card-position .card-body {
-  padding: 0px !important;
+  padding: 0 !important;
 }
 
-.group-social-network img{
-  margin: 0px 2px;
+.group-social-network img {
+  margin: 0 2px;
 }
 
 .share-copy-icon {
@@ -138,5 +143,3 @@ footer p {
   align-items: center;
   justify-content: center;
 }
-
-
