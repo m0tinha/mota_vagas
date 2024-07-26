@@ -1,2 +1,32 @@
-<h1>Positions#index</h1>
-<p>Find me in app/views/positions/index.html.erb</p>
+<h2>Minhas vagas</h2>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Carreira</th>
+      <th scope="col">Local</th>
+      <th scope="col">Tipo de contrato</th>
+      <th scope="col">Candidaturas</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <th scope="row"><%= position.name %></th>
+        <td><%= career_name(position.career) %></td>
+        <td><%= modality(position) %></td> <!-- aplicar helper -->
+        <td><%= contract_name(position.contract) %></td>
+        <td>
+          <% if position.applicants.size > 0 %>
+            <%= link_to "Ver aplicações (#{position.applicants.count})", position_applicants_path(position), class: 'btn btn-warning btn-sm' %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to 'Editar', edit_position_path(position), class: 'btn btn-primary btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

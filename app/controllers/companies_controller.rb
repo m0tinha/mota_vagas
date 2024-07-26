@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!
   def new
     if current_user.company
       redirect_to edit_company_path(current_user.company), alert: "Você já possui uma empresa. Edite sua empresa existente."
