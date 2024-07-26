@@ -77,3 +77,5 @@ gem "devise", "~> 4.9"
 gem "mailcatcher", "~> 0.2.4"
 
 gem 'rspec-rails'
+
+gem 'rails-i18n', '~> 7.0.0' 

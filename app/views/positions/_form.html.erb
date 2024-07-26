@@ -1,66 +1,12 @@
-<form action="/positions" accept-charset="UTF-8" method="post">
-  <input type="hidden" name="authenticity_token" value="TOKEN">
+<%= simple_form_for @position do |f| %>
+  <%= f.input :name %>
+  <%= f.input :career, as: :select, collection: @careers, label_method: :second, value_method: :first, include_blank: false, selected: @position.career %>
+  <%= f.input :contract, as: :select, collection: @contracts, label_method: :second, value_method: :first, include_blank: false, selected: @position.contract %>
+  <%= f.input :remote %>
+  <%= f.input :publish %>
+  <%= f.input :city %>
+  <%= f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first %>
+  <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
 
-  <div class="form-group">
-    <label for="position_name">Name</label>
-    <input class="form-control" type="text" name="position[name]" id="position_name">
-  </div>
-
-  <div class="form-group">
-    <label for="position_career">Career</label>
-    <select class="form-control" name="position[career]" id="position_career">
-      <option value="VALUE1" selected="selected">LABEL1</option>
-      <option value="VALUE2">LABEL2</option>
-      <!-- Add more options as needed -->
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="position_contract">Contract</label>
-    <select class="form-control" name="position[contract]" id="position_contract">
-      <option value="VALUE1" selected="selected">LABEL1</option>
-      <option value="VALUE2">LABEL2</option>
-      <!-- Add more options as needed -->
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="position_remote">Remote</label>
-    <input class="form-control" type="checkbox" name="position[remote]" id="position_remote">
-  </div>
-
-  <div class="form-group">
-    <label for="position_publish">Publish</label>
-    <input class="form-control" type="checkbox" name="position[publish]" id="position_publish">
-  </div>
-
-  <div class="form-group">
-    <label for="position_city">City</label>
-    <input class="form-control" type="text" name="position[city]" id="position_city">
-  </div>
-
-  <div class="form-group">
-    <label for="position_state">State</label>
-    <select class="form-control" name="position[state]" id="position_state">
-      <option value="STATE1">STATE_LABEL1</option>
-      <option value="STATE2">STATE_LABEL2</option>
-      <!-- Add more options as needed -->
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="position_summary">Summary</label>
-    <textarea class="form-control count-textarea" name="position[summary]" id="position_summary" rows="4" maxlength="360"></textarea>
-    <div id="the-count">
-      <span id="current">0</span>
-      <span id="maximun">/ 360</span>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="position_description">Descrição</label>
-    <textarea class="form-control" name="position[description]" id="position_description"></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
