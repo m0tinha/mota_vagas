@@ -1,17 +1,15 @@
+# frozen_string_literal: true
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
-  get 'applicants/index'
-  get 'applicants/new'  
+  mount Sidekiq::Web => '/sidekiq'
   resources :companies, only: [:new, :edit, :update, :create]
-  resources :positions
-  resources :applicants, only: [:index, :new, :create]
+  resources :positions do
+    resources :applicants, only: [:index]
+  end
+  resources :applicants, only: [:new, :create]
   devise_for :users
-  root 'home#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
+  root "home#index"
+  get "/vaga/:slug", action: :public_position, controller: :positions, as: :public_position
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -22,6 +22,8 @@ pt-BR:
         remote: Esta vaga é totalmente remota?
         city: Cidade
         state: Estado
+        brazil: Brasil
         summary: Resumo da descrição (até 360 caracteres)
         description: Descrição
         publish: Esta vaga é pública?
+        
