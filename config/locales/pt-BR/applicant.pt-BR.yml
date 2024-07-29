@@ -6,3 +6,8 @@ pt-BR:
         email: E-mail
         phone: Telefone
         resume: Currículo
+      position:
+        contracts:
+          tempo_integral: "Tempo Integral"
+          meio_periodo: "Meio Período"
+          # outras chaves
