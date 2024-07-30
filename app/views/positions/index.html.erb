@@ -24,7 +24,18 @@
           <% end %>
         </td>
         <td>
-          <%= link_to 'Editar', edit_position_path(position), class: 'btn btn-primary btn-sm' %>
+          <div class="dropdown">
+            <i class="bi bi-gear "id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <i class="bi bi-chevron-down dropdown-toggle-arrow" id="dropdownArrow" data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><%= link_to 'Editar', edit_position_path(position), class: 'dropdown-item' %></li>
+              <li>
+                <%= button_to position_path(position), method: :delete, data: { confirm: 'Tem certeza de que deseja remover esta vaga?' }, class: 'dropdown-item' do %>
+                  <i></i> Remover
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </td>
       </tr>
     <% end %>

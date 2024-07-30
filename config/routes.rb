@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   resources :companies, only: [:new, :edit, :update, :create]
   resources :positions do
-    resources :applicants, only: [:index]
+  resources :applicants, only: [:index]
   end
   resources :applicants, only: [:new, :create]
   devise_for :users

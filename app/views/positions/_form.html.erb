@@ -6,7 +6,7 @@
   <%= f.input :publish %>
   <%= f.input :city %>
   <%= f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first %>
-  <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
-
+  <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>  
+  <%= f.input :description, label: 'Descrição', maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>  
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>

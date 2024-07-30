@@ -11,8 +11,7 @@
     <%= stylesheet_link_tag "theme", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     
-
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module' %>
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
   </head>
 
@@ -21,11 +20,10 @@
     <main class="container">
       <%= yield %>
     </main>
-    
   </body>
   <footer class="footer mt-auto">
       <div>
         <p>&copy; <%= Time.now.year  %> - desenvolvido por Dev.Motinha</p>
       </div>
-    </footer>
+  </footer>
 </html>

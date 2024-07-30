@@ -143,3 +143,16 @@ footer p {
   align-items: center;
   justify-content: center;
 }
+
+
+/* Estiliza o contêiner para ícones de dropdown */
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer; /* Adiciona cursor de ponteiro */
+}
+
+/* Ajusta o espaçamento entre o ícone e a seta */
+.dropdown-arrow {
+  margin-left: 5px; /* Ajuste o valor conforme necessário */
+}
