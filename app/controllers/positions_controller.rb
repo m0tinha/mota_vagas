@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
   before_action :set_company, :set_i18n_careers, :set_i18n_contracts, except: [:public_position]
-  before_action :set_position, only: [:edit, :show, :update]
+  before_action :set_position, only: [:edit, :destroy, :update, :show]
 
   def index
     @positions = @company.positions
@@ -14,6 +14,14 @@ class PositionsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @position.destroy!
+    respond_to do |format|
+      format.html { redirect_to positions_path, notice: "Vaga Excluída com Sucesso." }
+      format.json { head :no_content }
+    end
   end
 
   def create

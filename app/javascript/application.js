@@ -2,3 +2,12 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
+
+import "trix"
+import "@rails/actiontext"
+import Rails from '@rails/ujs';
+Rails.start();
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Rails UJS is working");
+});
