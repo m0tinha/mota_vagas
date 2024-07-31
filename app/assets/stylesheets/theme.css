@@ -156,3 +156,14 @@ footer p {
 .dropdown-arrow {
   margin-left: 5px; /* Ajuste o valor conforme necessário */
 }
+
+.the-count {
+  position: absolute;
+  right: 10px; /* Ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white; /* Opcional, para dar contraste */
+  padding: 0 5px; /* Opcional, para adicionar espaço ao redor do texto */
+  display: flex;
+  align-items: center;
+}

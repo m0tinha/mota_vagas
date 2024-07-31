@@ -6,7 +6,34 @@
   <%= f.input :publish %>
   <%= f.input :city %>
   <%= f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first %>
-  <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>  
-  <%= f.input :description, label: 'Descrição', maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>  
+  
+  <div style="position: relative;">
+    <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4, id: 'summary-input' } %>
+    <div id="the-count" style="position: absolute; right: 10px; top: 0; font-size: 0.875rem; color: #6c757d;">
+      <span id="current">0</span> / <span id="maximum">360</span>
+    </div>
+  </div>
+  
+  <label>Descrição</label>
+  <%= f.rich_text_area :description %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var summaryInput = document.getElementById('summary-input');
+    var currentCount = document.getElementById('current');
+    var maximumCount = document.getElementById('maximum');
+
+    if (summaryInput && currentCount && maximumCount) {
+      summaryInput.addEventListener('input', function() {
+        var currentLength = summaryInput.value.length;
+        currentCount.textContent = currentLength;
+      });
+
+      // Initialize the counter on page load
+      var initialLength = summaryInput.value.length;
+      currentCount.textContent = initialLength;
+    }
+  });
+</script>

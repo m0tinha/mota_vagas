@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_29_154317) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_30_163413) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,7 +81,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_154317) do
     t.string "city"
     t.string "state"
     t.text "summary"
-    t.text "description"
     t.boolean "publish"
     t.bigint "company_id", null: false
     t.datetime "created_at", null: false
